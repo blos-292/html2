@@ -1,0 +1,260 @@
+:root {
+    --bg-main: #f9fbf9;
+    --nav-bg: #ffffff;
+    --text-dark: #34495e;
+    --accent-warm: #a8bfa1; /* Sage Green */
+    --accent-secondary: #e2d1b9;
+    --card-border: #e8ede8;
+    --side-padding: 10%; /* Global side spacing variable */
+}
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-dark);
+}
+
+/* --- THE FIX: Universal Container --- */
+/* Add this class to your <main> or <div> tags in the HTML */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--side-padding);
+}
+
+/* --- NAVIGATION FIX --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px var(--side-padding); /* Uses 10% on sides */
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--card-border);
+}
+
+/* --- HERO TEXT FIX --- */
+.hero-text {
+    position: absolute;
+    bottom: 12%;
+    left: var(--side-padding); /* Aligns with the Nav and Content */
+    right: var(--side-padding); /* Prevents text from hitting the right edge */
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-text h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Shrinks font on small screens */
+    margin: 0;
+}
+
+/* --- PHOTOGRAPHY GRID FIX --- */
+.photo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 60px var(--side-padding); /* Added vertical breathing room */
+}
+
+/* --- DESIGN GRID FIX --- */
+.design-grid {
+    column-count: 3;
+    column-gap: 30px;
+    padding: 60px var(--side-padding);
+}
+
+/* --- CONTACT FORM FIX --- */
+.contact-box {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid var(--card-border);
+    /* Ensure the box doesn't hit edges on mobile */
+    width: 90%; 
+    box-sizing: border-box;
+}
+
+/* Responsive adjustment for tablets/phones */
+@media (max-width: 768px) {
+    :root {
+        --side-padding: 5%; /* Tightens padding slightly for more space on small screens */
+    }
+    .design-grid {
+        column-count: 1;
+    }
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+}
+
+/* --- CLEAN NAVIGATION --- */
+nav {
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--card-border);
+    padding: 25px 0; /* Vertical breathing room */
+}
+
+/* Ensure the logo and links are at opposite ends */
+nav .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 40px; /* This is the key: it adds 40px of space between each link */
+}
+
+/* --- CLEAN NAVIGATION --- */
+nav {
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--card-border);
+    padding: 20px 0; /* Vertical spacing */
+    width: 100%;
+}
+
+/* This is the magic part: it centers the nav content */
+nav .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    /* The padding is inherited from your .container class */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 35px; /* Adds nice breathing room between links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* --- THE FIX: Centering Everything --- */
+.container {
+    max-width: 1200px; /* Limits width on big screens */
+    margin: 0 auto;    /* Centers the block */
+    padding: 0 10%;    /* This is your "Safety Zone" from the edge */
+    width: 100%;       /* Ensures it takes up the available space */
+}
+
+/* --- THE FIX: Breathable but Wide --- */
+.container {
+    /* We remove 'max-width' so it stays wide */
+    width: 100%;
+    /* 5% padding creates a consistent gap on the left and right */
+    padding: 0 5%; 
+    box-sizing: border-box;
+    margin: 0; /* Keeps it from forcing a center alignment */
+}
+
+/* --- NAVIGATION --- */
+nav {
+    width: 100%;
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--card-border);
+    padding: 20px 0;
+}
+
+/* This ensures the logo and links stay 5% away from their respective edges */
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px; /* Space between links so they don't smush */
+}
+
+/* --- LINK HOVER ONLY --- */
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-warm); /* Sage Green */
+}
+
+nav ul li a.active {
+    color: var(--accent-warm);
+}
+
+/* --- GRID ADJUSTMENT --- */
+/* Ensure your grids also use the container logic */
+.photo-container, .design-grid {
+    padding: 40px 0; /* Vertical spacing only since .container handles the sides */
+}
+/* Update your existing nav styles with this */
+nav {
+    width: 100%;
+    padding: 30px 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between; /* This pushes the logo left and links right */
+    align-items: center;
+    padding: 0 5%; /* Your signature 5% gap */
+    max-width: 100%; /* Ensures it hits the edges of the gap */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--charcoal);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--sage);
+}
+
+.logo {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: var(--charcoal);
+}

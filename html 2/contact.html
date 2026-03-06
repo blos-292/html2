@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap">
+    <style>
+        :root {
+            --sage: #93a98f;
+            --sand: #e5d3b3;
+            --charcoal: #2d3436;
+        }
+
+        body { 
+            margin: 0; 
+            background: #fff; 
+            font-family: 'Inter', sans-serif; 
+            color: var(--charcoal);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* NAVIGATION: Logo Left, Links Right */
+        nav { 
+            width: 100%; 
+            padding: 40px 0; 
+            background: #fff; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 5%; 
+        }
+
+        nav ul { display: flex; gap: 40px; list-style: none; margin: 0; padding: 0; }
+        nav ul li a { text-decoration: none; color: var(--charcoal); font-weight: 700; letter-spacing: 2px; font-size: 0.75rem; text-transform: uppercase; transition: color 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--sage); }
+
+        .logo { font-size: 1.1rem; letter-spacing: 3px; }
+
+        /* CONTACT & ABOUT LAYOUT */
+        .contact-wrapper { 
+            flex: 1;
+            display: flex; 
+            flex-direction: column;
+            padding: 80px 5% 100px; 
+            gap: 80px; 
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 10%;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 100px;
+        }
+
+        .about-image { flex: 0.8; }
+        .about-image img { width: 100%; border-radius: 2px; filter: grayscale(20%); }
+
+        .about-text { flex: 1.2; }
+        .about-text h2 { font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; color: var(--sage); margin-bottom: 20px; }
+        
+        /* THE SIMPLIFIED PARAGRAPH PORTION */
+        .about-headline { font-weight: 700; font-size: 1.8rem; letter-spacing: -1px; line-height: 1.2; margin-bottom: 20px; }
+        .about-body { font-size: 1.1rem; color: #666; font-weight: 400; line-height: 1.8; }
+
+        .form-area {
+            display: flex;
+            gap: 10%;
+            align-items: flex-start;
+        }
+
+        .contact-header { flex: 1; }
+        .giant-text { font-size: clamp(4rem, 10vw, 8rem); line-height: 0.8; letter-spacing: -5px; margin: 0; font-weight: 900; }
+
+        /* FORM STYLING */
+        .contact-box { flex: 1; background: #fcfaf7; padding: 60px; }
+        .form-input {
+            width: 100%; background: transparent; border: none; border-bottom: 2px solid #ddd; padding: 20px 0; margin-bottom: 30px;
+            font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; transition: border-color 0.3s;
+        }
+        .form-input:focus { border-bottom-color: var(--sage); }
+        .form-input::placeholder { color: #bbb; font-weight: 700; font-size: 0.7rem; letter-spacing: 2px; }
+
+        .submit-btn {
+            background: var(--charcoal); color: #fff; border: none; padding: 20px 40px; font-weight: 700; letter-spacing: 3px; cursor: pointer; transition: 0.3s;
+        }
+        .submit-btn:hover { background: var(--sage); transform: translateY(-2px); }
+
+        /* SOCIAL FOOTER */
+        footer {
+            padding: 40px 5%;
+            background: #fff;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-links { display: flex; gap: 30px; }
+        .social-links a {
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .social-links a:hover { color: var(--sage); }
+        .copyright { font-size: 0.7rem; color: #bbb; letter-spacing: 1px; }
+
+        @media (max-width: 900px) {
+            .about-section, .form-area, footer { flex-direction: column; text-align: center; }
+            .nav-container { flex-direction: column; gap: 20px; }
+            .about-image { order: 2; margin-top: 40px; }
+            footer { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><strong>CREATIVE</strong>MEDIA</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="design.html">Design</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="contact-wrapper">
+        <section class="about-section">
+            <div class="about-image">
+                <img src="me.jpg" alt="Portrait">
+            </div>
+            <div class="about-text">
+                <h2>Perspective</h2>
+                <p class="about-headline">
+                    Digital Native. <br>Visual Architect.
+                </p>
+                <p class="about-body">
+                    I am a high school student and creator focused on the intersection of digital media 
+                    and photography. I use my perspective to capture the world through a modern lens, 
+                    blending clean design with authentic visual storytelling.
+                </p>
+            </div>
+        </section>
+
+        <div class="form-area">
+            <div class="contact-header">
+                <h1 class="giant-text">SAY<br>HELLO.</h1>
+                <p style="margin-top: 30px; color: #666;">Available for digital media and photography commissions 2026.</p>
+            </div>
+            
+            <div class="contact-box">
+                <form>
+                    <input type="text" placeholder="NAME" class="form-input">
+                    <input type="email" placeholder="EMAIL" class="form-input">
+                    <textarea placeholder="PROJECT DETAILS" rows="5" class="form-input"></textarea>
+                    <button type="submit" class="submit-btn">SEND INQUIRY</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">© 2026 CREATIVE MEDIA</div>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Behance</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>

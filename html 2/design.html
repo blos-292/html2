@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --sage: #93a98f; --sand: #e5d3b3; --charcoal: #2d3436; }
+        body { margin: 0; background: #fff; font-family: 'Inter', sans-serif; }
+        
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 40px;
+            padding: 50px 5% 150px;
+        }
+
+        .design-item {
+            position: relative;
+            transition: transform 0.4s ease;
+        }
+
+        .design-item:hover { transform: translateY(-10px); }
+
+        .design-item img { width: 100%; border-radius: 2px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+        /* Diverse Grid Sizes */
+        .large { grid-column: span 8; }
+        .small { grid-column: span 4; }
+        .full { grid-column: span 12; }
+
+        .bg-text {
+            position: absolute;
+            font-size: 10vw;
+            font-weight: 900;
+            color: rgba(0,0,0,0.03);
+            z-index: -1;
+            bottom: -20px;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <div class="logo"><strong>CREATIVE</strong>MEDIA</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="design.html" class="active">Design</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <header style="padding: 15vw 5% 5vw;">
+        <span style="display: block; letter-spacing: 8px; text-transform: uppercase; color: var(--sand); font-size: 0.9rem; font-weight: 700; margin-bottom: 30px;">Digital Solutions</span>
+        <h1 style="font-size: clamp(4rem, 15vw, 10rem); margin: 0; line-height: 0.85; letter-spacing: -2px; text-transform: uppercase;">Visual<br>Design</h1>
+    </header>
+
+    <div class="design-grid">
+        <div class="design-item large">
+            <img src="brush.jpg">
+            <div class="bg-text">09</div>
+        </div>
+
+       <div class="design-item small">
+    <img src="ss.jpg" style="aspect-ratio: 2 / 3; object-fit: cover; width: 100%;">
+</div>
+
+        <div class="design-item small">
+            <img src="lw.jpg" style="aspect-ratio: 2 / 3; object-fit: cover; width: 100%;">
+        </div>
+
+        <div class="design-item large">
+            <img src="bustle.jpg">
+            <div class="bg-text">10</div>
+        </div>
+
+        <div class="design-item full">
+            <img src="cubism.jpg">
+                   </div>
+
+        <div class="design-item small"><img src="scape.jpg"></div>
+        
+        <div class="design-item large"><img src="city.jpg"></div>
+    </div>
+</main>
+</body>
+</html>

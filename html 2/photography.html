@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --sage: #93a98f;
+            --sand: #e5d3b3;
+            --charcoal: #2d3436;
+        }
+
+        body { margin: 0; background: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        nav { width: 100%; padding: 40px 0; background: #fff; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 0 5%; }
+        nav ul { display: flex; gap: 40px; list-style: none; margin: 0; padding: 0; }
+        nav ul li a { text-decoration: none; color: var(--charcoal); font-weight: 700; letter-spacing: 2px; font-size: 0.75rem; text-transform: uppercase; }
+        nav ul li a.active { color: var(--sage); }
+
+        header { padding: 18vw 5% 10vw; text-align: center; }
+        .eyebrow { display: block; letter-spacing: 8px; text-transform: uppercase; color: var(--sage); font-size: 0.8rem; font-weight: 700; margin-bottom: 40px; }
+        h1 { font-size: clamp(4rem, 15vw, 10rem); margin: 0; line-height: 0.85; letter-spacing: -2px; text-transform: uppercase; }
+        .scroll-line { width: 1px; height: 100px; background: linear-gradient(to bottom, var(--sage), transparent); margin: 60px auto 0; }
+
+        .story-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8%;
+            padding: 120px 5%;
+            position: relative;
+        }
+
+        .story-section:nth-child(even) { flex-direction: row-reverse; background-color: #fcfaf7; }
+
+        .story-image { flex: 1.2; position: relative; }
+        .story-image img { 
+            width: 100%; 
+            display: block; 
+            box-shadow: 30px 30px 80px rgba(0,0,0,0.1); 
+            object-fit: cover;
+        }
+
+        .img-tall { aspect-ratio: 4/5; }
+        .img-wide { aspect-ratio: 16/9; }
+
+        .story-content { flex: 0.8; padding: 40px; }
+        .story-content h2 { font-size: 3rem; line-height: 1; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -1px; }
+        .story-content p { line-height: 1.8; color: #666; font-size: 1.1rem; max-width: 400px; }
+
+        .bg-number {
+            position: absolute;
+            font-size: 22vw;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(0,0,0,0.04);
+            z-index: -1;
+            top: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .story-section, .story-section:nth-child(even) { flex-direction: column; padding: 60px 5%; }
+            .story-image { width: 100%; margin-bottom: 40px; }
+            .nav-container { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo"><strong>CREATIVE</strong>MEDIA</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="photography.html" class="active">Photography</a></li>
+            <li><a href="design.html">Design</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <header>
+        <span class="eyebrow">Curated Gallery</span>
+        <h1>Photo<br>graphy</h1>
+        <div class="scroll-line"></div>
+    </header>
+
+    <section class="story-section">
+        <div class="bg-number" style="left: 5%;">01</div>
+        <div class="story-image"><img src="ba.jpg" class="img-tall"></div>
+        <div class="story-content">
+            <h2>Golden<br>Hour</h2>
+            <p>Exploring natural light at its most dramatic.</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="bg-number" style="right: 5%;">02</div>
+        <div class="story-image"><img src="clock.jpg" class="img-wide"></div>
+        <div class="story-content">
+            <h2>Urban<br>Flow</h2>
+            <p>Cinematic captures of the modern city landscape.</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="bg-number" style="left: 5%;">03</div>
+        <div class="story-image"><img src="duo.jpg" class="img-tall"></div>
+        <div class="story-content">
+            <h2>Ethereal<br>Mist</h2>
+            <p>Composition through layers of atmosphere.</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="bg-number" style="right: 5%;">04</div>
+        <div class="story-image"><img src="ts.jpg" class="img-wide"></div>
+        <div class="story-content">
+            <h2>Silent<br>Horizon</h2>
+            <p>Minimalism found in open spaces.</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="bg-number" style="left: 5%;">05</div>
+        <div class="story-image"><img src="solo.jpg" class="img-tall"></div>
+        <div class="story-content">
+            <h2>Monolith<br>Form</h2>
+            <p>Verticality in brutalist architecture.</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="bg-number" style="right: 5%;">06</div>
+        <div class="story-image"><img src="ground.jpg" class="img-wide"></div>
+        <div class="story-content">
+            <h2>Street<br>Noir</h2>
+            <p>Shadow and light in the midnight hours.</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="bg-number" style="left: 5%;">07</div>
+        <div class="story-image"><img src="keshi.jpg" class="img-tall"></div>
+        <div class="story-content">
+            <h2>Static<br>Motion</h2>
+            <p>Freezing time within the chaos of the crowd.</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="bg-number" style="right: 5%;">08</div>
+        <div class="story-image"><img src="cross.jpg" class="img-wide"></div>
+        <div class="story-content">
+            <h2>Coastal<br>Gaze</h2>
+            <p>A wide look at the meeting of tide and shore.</p>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

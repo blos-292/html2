@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Media | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --sage: #93a98f; --sand: #e5d3b3; --charcoal: #2d3436; }
+        body { margin: 0; background: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        /* Large Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            width: 90%;
+            height: 85vh;
+            margin: 5vh auto;
+            overflow: hidden;
+            border-radius: 4px;
+            background: #f9f9f9;
+        }
+        .mySlides {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            transition: opacity 1.5s ease-in-out;
+            opacity: 0;
+        }
+        .active-slide { opacity: 1; }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            z-index: 10;
+            color: white;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <div class="logo"><strong>CREATIVE</strong>MEDIA</div>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="design.html">Design</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="slideshow-container">
+        <img class="mySlides active-slide" src="sun.jpg">
+        <img class="mySlides" src="pon.jpg">
+        <img class="mySlides" src="fb.jpg">
+        <img class="mySlides" src="con.jpg">
+        <img class="mySlides" src="mon.jpg">
+
+        <div class="hero-overlay">
+            <span style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem;">Portfolio v.26</span>
+            <h1 style="font-size: clamp(3rem, 10vw, 8rem); margin: 10px 0; line-height: 0.9;">Visual<br>Direction</h1>
+        </div>
+    </section>
+</main>
+
+<script>
+    let index = 0;
+    const slides = document.querySelectorAll(".mySlides");
+    function rotate() {
+        slides[index].classList.remove("active-slide");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active-slide");
+        setTimeout(rotate, 4500);
+    }
+    setTimeout(rotate, 4500);
+</script>
+</body>
+</html>
