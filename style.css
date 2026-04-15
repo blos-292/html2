@@ -1,0 +1,148 @@
+/* --- 1. VARIABLES & RESET --- */
+:root {
+    --bg-main: #f9fbf9;
+    --nav-bg: #ffffff;
+    --text-dark: #34495e;
+    --charcoal: #2d3436;
+    --sage: #93a98f;
+    --accent-warm: #a8bfa1; 
+    --accent-secondary: #e2d1b9;
+    --card-border: #e8ede8;
+    --side-padding: 5%; /* Consistent 5% gap you requested */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- 2. UNIVERSAL CONTAINER --- */
+.container {
+    width: 100%;
+    padding: 0 var(--side-padding);
+    margin: 0 auto;
+}
+
+/* --- 3. NAVIGATION --- */
+nav {
+    width: 100%;
+    padding: 30px 0;
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between; /* Logo Left, Links Right */
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: var(--charcoal);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--charcoal);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    color: var(--sage);
+}
+
+/* --- 4. HERO SECTION --- */
+.hero-text {
+    position: absolute;
+    bottom: 12%;
+    left: var(--side-padding);
+    right: var(--side-padding);
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    margin: 0;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+/* --- 5. GRIDS --- */
+.photo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 60px 0; /* Container handles side padding */
+}
+
+.design-grid {
+    column-count: 3;
+    column-gap: 30px;
+    padding: 60px 0;
+}
+
+.design-grid img {
+    width: 100%;
+    margin-bottom: 30px;
+    display: block;
+    border-radius: 2px;
+}
+
+/* --- 6. CONTACT FORM --- */
+.contact-box {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 4px; /* Matches your minimal aesthetic better than 20px */
+    border: 1px solid var(--card-border);
+    width: 90%;
+}
+
+/* --- 7. RESPONSIVENESS --- */
+@media (max-width: 900px) {
+    nav .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+
+    .design-grid {
+        column-count: 1;
+    }
+    
+    .hero-text {
+        bottom: 5%;
+    }
+}
